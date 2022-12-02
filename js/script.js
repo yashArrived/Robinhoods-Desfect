@@ -14,9 +14,9 @@ window.onscroll = () =>{
 
 
 
-function formsubmission(e){
-   // e.preventDefault();
-   const typedplace = document.getElementById('fname').value ;
-   console.log("form just got submitted");
-   console.log(typedplace);
-}
+// function formsubmission(e){
+//    // e.preventDefault();
+//    const typedplace = document.getElementById('fname').value ;
+//    console.log("form just got submitted");
+//    console.log(typedplace);
+// }
