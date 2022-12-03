@@ -1,3 +1,4 @@
+
 const dateObj = new Date();
 const firebaseConfig = {
     apiKey: "AIzaSyBJ43P1fXyaKHVjhBTnx8w-FHGuAmK0cWY",
@@ -113,7 +114,7 @@ function removedata(placename){
 }
 
 // Upload Function whill be call Here!!!!
-
+function uploadDataFromStart(){
 const cityname='Faridabad';
 const countryname='India'
 const stateName='Uttar Pradesh'
@@ -138,7 +139,7 @@ var Wetherdataset= getWeather(cityname).then((value)=>
     
     
 
-});
+});}
 
 
 
@@ -263,6 +264,26 @@ async function getAllData(place_){
 
 
 
+async function getImage(query){
+    const imageApi_key='563492ad6f917000010000017e7427d6e2b74dee9cb3c3edd0f3cd11';
+    const url_aqi = `https://api.pexels.com/v1/search?query=${query}&per_page=1`;
+   
+
+    const response_aqi = await fetch(url_aqi,{
+        method:'GET',
+        headers:{
+            Accept:'application /json',
+            Authorization :  imageApi_key          
+
+        }
+    });
+    const data_json = await response_aqi.json();
+
+    const imagefile= await data_json.photos[0].src.tiny;
+    return imagefile;
+
+}
+
 
 
 const searchPage=document.querySelector('.searchResult')
@@ -280,7 +301,7 @@ function loadData(){
     
     var Dataload=[];
     var FireDataRef = firebase.database().ref('Places/');
-    FireDataRef.on("value",function(snapshot){
+    FireDataRef.on("value",async function(snapshot){
         snapshot.forEach(function (childSnapshot){
             Dataload.push(childSnapshot.val());
         });
@@ -320,6 +341,15 @@ function loadData(){
         const RecomentBox=document.querySelector('.RecoBox');
 
         for(var t=0; t<placesdata.length; t++){
+            var box_image ="icons/defaultit.png";
+                
+            
+            try{
+                box_image=await getImage(placesdata[t].place);
+            }catch(e){
+                box_image ="icons/defaultit.png";
+            }
+            
 
                   var dateapi=placesdata[t].date;
                   var Apitime=dateapi.split(" ");
@@ -331,7 +361,7 @@ function loadData(){
                 RecomentBox.innerHTML +=`
                 <div class="box">
                 <div class="image">
-                    <img src="images/img-1.jpg" alt="">
+                    <img class="small-image" src=${box_image} alt="">
                 </div>
                 <div class="content">
                     <h3>${placesdata[t].place}</h3>

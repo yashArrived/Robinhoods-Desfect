@@ -1126,3 +1126,7 @@ section{
    justify-content: space-around;
    align-items: center;
 }
+
+.small-image{
+   height: 500px;
+}
