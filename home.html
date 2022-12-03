@@ -21,13 +21,15 @@
 <!-- header section starts  -->
 
 <section class="header">
-
-   <a href="home.php" class="logo">Desfect</a>
+   <div class="logoandname">
+<img id="logoimg" src="./icons/shouldgo.png" alt="">
+   <a href="#home"  class="logo">Desfect</a>
+</div>
 
    <nav class="navbar">
       <a href="#home">home</a>
-      <a >Recommendations</a>
-      <a>About Us</a>
+      <a href="#whatwerecommend" >Recommendations</a>
+      <a href="#ourteamgem">About Us</a>
    </nav>
 
    <div id="menu-btn" class="fas fa-bars"></div>
@@ -41,7 +43,7 @@
 
 <!-- Pop Up form -->
 <!-- A button to open the popup form -->
-<button class="open-button" onclick="openForm()">Open Form</button>
+<button class="open-button" onclick="openForm()">Submit </button>
 
 <!-- The form -->
 <div class="form-popup" id="myForm">
@@ -53,15 +55,17 @@
     <label ><b>Place Name</b></label>
     <input id="placename" type="text" placeholder="Enter Name of place" required>
 
-
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-        <a href="#">Low</a>
-        <a href="#">Moderate2</a>
-        <a href="#">High</a>
-      </div>
+   <label><b> Select Crowd </b></label>
+    <div class="box1">
+      <select>
+        <option>Less</option>
+        <option>Moderate</option>
+        <option>High</option>
+        <option>Very High!</option>
+        
+      </select>
     </div>
+
     <br>
     <br>
 
@@ -80,13 +84,13 @@
 
 <!-- home section starts  -->
 
-<section class="home">
+<section id="home" class="home">
 
    <div class="swiper home-slider">
 
       <div class="swiper-wrapper">
 
-         <div class="swiper-slide slide" style="background:url(images/home-slide-1.jpg) no-repeat">
+         <div class="swiper-slide slide" style="background:url(images/back1.jpg) no-repeat">
             <div class="content">
                <span>explore, discover, travel</span>
                <h3>What we do</h3>
@@ -152,7 +156,7 @@
 
 <!-- home packages section starts  -->
 
-<section class="home-packages">
+<section id="whatwerecommend" class="home-packages">
 
    <h1 class="heading-title"> Our Recommendations </h1>
 
@@ -195,7 +199,7 @@
    </div>
 </div>
 <!-- home about section starts  -->
-<h1 class="heading-title">Our Team</h1>
+<h1 id="ourteamgem" class="heading-title">Our Team</h1>
 <div class="container flexingteam">
    
    <div class="team">
@@ -221,11 +225,11 @@
       <div class="team-img">
         <img src="./images/profilr.jpg" alt="Team Image">
         <div class="team-social">
-          <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-          <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-          <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-          <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-          <a class="social-li" href=""><i class="fab fa-github"></i></a>
+          <a class="social-tw" href="https://twitter.com/yuvrajy88012347"><i class="fab fa-twitter"></i></a>
+          <!-- <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a> -->
+          <a class="social-li" href="https://www.linkedin.com/in/yuvraj-singh-yadav-aa9488140/"><i class="fab fa-linkedin-in"></i></a>
+          <a class="social-in" href="https://www.instagram.com/yuvrajyadav9448/"><i class="fab fa-instagram"></i></a>
+          <a class="social-li" href="https://github.com/yyuvraj54"><i class="fab fa-github"></i></a>
         </div>
       </div>
       <div class="team-content">
