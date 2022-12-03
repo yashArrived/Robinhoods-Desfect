@@ -114,7 +114,7 @@ function removedata(placename){
 }
 
 // Upload Function whill be call Here!!!!
-
+function updateDataManual(){
 const cityname='noida';
 const countryname='India'
 const stateName='Uttar Pradesh'
@@ -142,7 +142,7 @@ var Wetherdataset= getWeather(cityname).then((value)=>
 
 });
 
-
+}
 
 
 
