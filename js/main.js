@@ -83,7 +83,7 @@ const getWeather = async(city) => {
 } 
 const getAirQty=async (lat,lon) =>{
     
-    const aqikey='2e6a0013-90d4-4555-8ef4-d661368e2342';
+    const aqikey='47ccaa1a-85df-46bd-bfb4-35fc42216c14';
     const url_aqi = `http://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lon}&key=${aqikey}`
     const response_aqi = await fetch(url_aqi);
     const data_aqi = await response_aqi.json()
@@ -114,13 +114,14 @@ function removedata(placename){
 }
 
 // Upload Function whill be call Here!!!!
-function uploadDataFromStart(){
-const cityname='Faridabad';
+
+const cityname='noida';
 const countryname='India'
 const stateName='Uttar Pradesh'
 const populationBar='Normal';
 var Wetherdataset= getWeather(cityname).then((value)=>
 {
+    console.log("data loading....")
     var AqiDAta=getAirQty(dataset.lat,dataset.lon).then( (Airvalue)=>{
         
     
@@ -139,7 +140,8 @@ var Wetherdataset= getWeather(cityname).then((value)=>
     
     
 
-});}
+});
+
 
 
 
@@ -385,8 +387,11 @@ function loadData(){
 
 
     
-    
+
     
 
 }
+
+
+
 loadData();
