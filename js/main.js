@@ -114,7 +114,7 @@ function removedata(placename){
 
 // Upload Function whill be call Here!!!!
 
-const cityname='Faridabad';
+const cityname='taj mahal';
 const countryname='India'
 const stateName='Uttar Pradesh'
 const populationBar='Normal';
@@ -298,19 +298,25 @@ function loadData(){
             }
         }
         
+        
 
         var placesdata=[];
         var Datacount=3;
         for(var w=0; w<Dataload.length; w++){
             if(Datacount==0){break;}
+            
             if(Dataload[w].shouldGo=='Normal'){
                 placesdata.push(Dataload[w]);
+                Datacount--;
             }
             else if(Dataload[w].shouldGo=='Hight'){
                 placesdata.push(Dataload[w]);
+                Datacount--;
             }
-            Datacount--;
+
+            
         }
+        console.log(placesdata);
         const RecomentBox=document.querySelector('.RecoBox');
 
         for(var t=0; t<placesdata.length; t++){
@@ -341,9 +347,7 @@ function loadData(){
                     
                     
                 </div>
-            </div>
-
-                `
+            </div>`
         }
         
     
@@ -355,5 +359,4 @@ function loadData(){
     
 
 }
-
 loadData();
