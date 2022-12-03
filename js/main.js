@@ -38,17 +38,17 @@ var dataset={
 
 function shouldgo(wether){
     var state='Normal'
-    if(wether[1]=='clear'){
-        state='Normal'
+    if(wether[1]=='Clear'){
+        state='Great Choice 👍🏼'
     }
     else if(wether[1]=='Clouds'){
-        state='Modrate'
+        state='Risk of rain ⛈️'
     }
     else if(wether[1]=='Smoke'){
-        state='Danger'
+        state='Avoid 🫁(health issue)'
     }
     else{
-        state='High';
+        state='Deskfect Says GO!';
     }
 
     return state;
@@ -255,7 +255,7 @@ async function getAllData(place_){
                <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Crowd: ${AllData[j].population}</p></div>
                <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temprature: ${AllData[j].temp} C</p></div>
                <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
-               <div class="holder"><p style="color:#696969"><i>User: ${AllData[j].person}</i></p></div>
+               <div class="holder"><p style="color:grey"><i>Updated by: ${AllData[j].person}</i></p></div>
            
             
                 
