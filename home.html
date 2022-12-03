@@ -47,7 +47,7 @@
 
 <!-- The form -->
 <div class="form-popup" id="myForm">
-  <form class="form-container" onsubmit="popupsubmit();return false;">
+  <form class="form-container" onsubmit="return false">
     <h1>Details of a place</h1>
     
     <label ><b>Your Name</b></label>
@@ -57,9 +57,9 @@
 
    <label><b> Select Crowd </b></label>
     <div class="box1">
-      <select>
+      <select  id="popselect">
         <option>Less</option>
-        <option>Moderate</option>
+        <option>Normal</option>
         <option>High</option>
         <option>Very High!</option>
         

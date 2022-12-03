@@ -1,4 +1,3 @@
-
 const dateObj = new Date();
 const firebaseConfig = {
     apiKey: "AIzaSyBJ43P1fXyaKHVjhBTnx8w-FHGuAmK0cWY",
@@ -93,7 +92,7 @@ const getAirQty=async (lat,lon) =>{
     return airqty; 
 }
 
-function uploaddata(name, aqiLevel, expenceValue, populationValue, wetherValue, goPercent,tempvalue,dateval,iconval){
+function uploaddata(name, aqiLevel, expenceValue, populationValue, wetherValue, goPercent,tempvalue,dateval,iconval,personval){
     DataRef=firebase.database().ref('Places/'+dataset.place);
     DataRef.set({
       place: name,
@@ -104,6 +103,7 @@ function uploaddata(name, aqiLevel, expenceValue, populationValue, wetherValue, 
       wether:wetherValue,
       shouldGo:goPercent,
       date:dateval,
+      person:personval,
       icon:iconval
     });
     // alert('Saved');
@@ -114,11 +114,9 @@ function removedata(placename){
 }
 
 // Upload Function whill be call Here!!!!
-function updateDataManual(){
-const cityname='noida';
-const countryname='India'
-const stateName='Uttar Pradesh'
-const populationBar='Normal';
+function uploadManualData(cityname,crowd,person){
+
+const populationBar=crowd;
 var Wetherdataset= getWeather(cityname).then((value)=>
 {
     console.log("data loading....")
@@ -132,17 +130,30 @@ var Wetherdataset= getWeather(cityname).then((value)=>
         dataset.temp=value[0];
         dataset.wether=value[1];
         dataset.aqi=Airvalue;
+        dataset.person=person;
         dataset.shouldGo=shouldgo(value);
         
-        uploaddata(dataset.place,dataset.aqi,dataset.expence,dataset.population,dataset.wether,dataset.shouldGo,dataset.temp,dataset.date,dataset.iconcode);
+        uploaddata(dataset.place,dataset.aqi,dataset.expence,dataset.population,dataset.wether,dataset.shouldGo,dataset.temp,dataset.date,dataset.iconcode,dataset.person);
 
     })
     
     
 
-});
+});}
 
-}
+const poupSubmit=document.querySelector('#submission1').addEventListener('click',()=>{
+const nameofplace = document.getElementById("placename").value;
+   const nameofperson = document.getElementById("personname").value;
+   const imgofperson = document.getElementById("myFile").value;
+   const popdataa = document.getElementById("popselect").value;
+
+   console.log(nameofplace);
+   console.log(nameofperson);
+   console.log(imgofperson);
+   console.log(popdataa);
+
+    uploadManualData(nameofplace,popdataa,nameofperson);
+}) 
 
 
 
@@ -238,13 +249,13 @@ async function getAllData(place_){
                      <h3>${AllData[j].place}</h3>
                      
                      <div class="infos">
-            
+               <div class="holder"><img class="small-icon" src="icons/shouldgo.png" alt=""><p>ShouldGo: ${AllData[j].shouldGo}</p></div>
                <div class="holder"><img class="small-icon" src=${Airimage} alt=""><p id="aqi">AQI: ${AllData[j].aqi}</p></div>
                <div class="holder"><img class="small-icon" src=${AllData[j].icon} alt=""><p>Weather: ${AllData[j].wether}</p></div>
-               <div class="holder"><img class="small-icon" src="icons/shouldgo.png" alt=""><p>ShouldGo: ${AllData[j].shouldGo}</p></div>
                <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Crowd: ${AllData[j].population}</p></div>
                <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temprature: ${AllData[j].temp} C</p></div>
                <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
+               <div class="holder"><p style="color:#696969"><i>User: ${AllData[j].person}</i></p></div>
            
             
                 
@@ -395,3 +406,4 @@ function loadData(){
 
 
 loadData();
+
