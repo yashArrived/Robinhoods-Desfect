@@ -114,7 +114,7 @@ function removedata(placename){
 
 // Upload Function whill be call Here!!!!
 
-const cityname='gardens galleria';
+const cityname='Faridabad';
 const countryname='India'
 const stateName='Uttar Pradesh'
 const populationBar='Normal';
@@ -276,6 +276,84 @@ submit.addEventListener('click' ,(e)=>{
 })
 
 
+function loadData(){
+    
+    var Dataload=[];
+    var FireDataRef = firebase.database().ref('Places/');
+    FireDataRef.on("value",function(snapshot){
+        snapshot.forEach(function (childSnapshot){
+            Dataload.push(childSnapshot.val());
+        });
+        for(var q=0; q<Dataload.length; q++){
+            var element=Dataload[q].aqi;
+            
+            for(var k=q+1; k<Dataload.length; k++){
+                if(element>Dataload[k].aqi){
+                    var temp=Dataload[k];
+                    Dataload[k]=Dataload[q];
+                    Dataload[q]=temp;
+                    break;
+                }
+                
+            }
+        }
+        
+
+        var placesdata=[];
+        var Datacount=3;
+        for(var w=0; w<Dataload.length; w++){
+            if(Datacount==0){break;}
+            if(Dataload[w].shouldGo=='Normal'){
+                placesdata.push(Dataload[w]);
+            }
+            else if(Dataload[w].shouldGo=='Hight'){
+                placesdata.push(Dataload[w]);
+            }
+            Datacount--;
+        }
+        const RecomentBox=document.querySelector('.RecoBox');
+
+        for(var t=0; t<placesdata.length; t++){
+
+                  var dateapi=placesdata[t].date;
+                  var Apitime=dateapi.split(" ");
+                  var currtime=[dateObj.getHours(),dateObj.getMinutes()];
+                  var Datestring=diff_hours(Apitime,currtime);
+
+                  var Airimage=airAQIimage(placesdata[t].aqi);
+
+                RecomentBox.innerHTML +=`
+                <div class="box">
+                <div class="image">
+                    <img src="images/img-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>${placesdata[t].place}</h3>
+                    
+                    <div class="infos">
+                    <div class="holder"><img class="small-icon" src="icons/shouldgo.png" alt=""><p>ShoulGo: ${placesdata[t].shouldGo}</p></div>
+                    <div class="holder"><img class="small-icon" src=${Airimage} alt=""><p id="aqi">Aqi: ${placesdata[t].aqi}</p></div>
+                    <div class="holder"><img class="small-icon" src=${placesdata[t].icon} alt=""><p>Wether: ${placesdata[t].wether}</p></div>
+                    <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Population: ${placesdata[t].population}</p></div>
+                    <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temp: ${placesdata[t].temp}</p></div>
+                    <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+                `
+        }
+        
+    
+    });
 
 
+    
+    
+    
 
+}
+
+loadData();
