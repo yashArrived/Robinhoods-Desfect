@@ -14,6 +14,29 @@ window.onscroll = () =>{
 
 
 
+//pop up form
+
+
+function openForm() {
+   document.getElementById("myForm").style.display = "block";
+ }
+ 
+ function closeForm() {
+   document.getElementById("myForm").style.display = "none";
+ }
+
+function popupsubmit(){
+   //e.preventDefault();
+   const nameofplace = document.getElementById("placename").value;
+   const nameofperson = document.getElementById("personname").value;
+   const imgofperson = document.getElementById("myFile").value;
+   
+   console.log(nameofplace);
+   console.log(nameofperson);
+   console.log(imgofperson);
+}
+
+
 // function formsubmission(e){
 //    // e.preventDefault();
 //    const typedplace = document.getElementById('fname').value ;

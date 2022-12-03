@@ -48,7 +48,7 @@ function shouldgo(wether){
         state='Danger'
     }
     else{
-        state='Hight';
+        state='High';
     }
 
     return state;
@@ -114,7 +114,7 @@ function removedata(placename){
 
 // Upload Function whill be call Here!!!!
 
-const cityname='taj mahal';
+const cityname='Faridabad';
 const countryname='India'
 const stateName='Uttar Pradesh'
 const populationBar='Normal';
@@ -309,7 +309,7 @@ function loadData(){
                 placesdata.push(Dataload[w]);
                 Datacount--;
             }
-            else if(Dataload[w].shouldGo=='Hight'){
+            else if(Dataload[w].shouldGo=='High'){
                 placesdata.push(Dataload[w]);
                 Datacount--;
             }

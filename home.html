@@ -36,6 +36,48 @@
 
 <!-- header section ends -->
 
+
+
+
+<!-- Pop Up form -->
+<!-- A button to open the popup form -->
+<button class="open-button" onclick="openForm()">Open Form</button>
+
+<!-- The form -->
+<div class="form-popup" id="myForm">
+  <form class="form-container" onsubmit="popupsubmit();return false;">
+    <h1>Details of a place</h1>
+    
+    <label ><b>Your Name</b></label>
+    <input id="personname" type="text" placeholder="Enter your name" required>
+    <label ><b>Place Name</b></label>
+    <input id="placename" type="text" placeholder="Enter Name of place" required>
+
+
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="#">Low</a>
+        <a href="#">Moderate2</a>
+        <a href="#">High</a>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <label ><b>Upload image of the place</b></label>
+    <input type="file" id="myFile" name="filename">
+    
+
+    <button type="submit" id="submission" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+
+
+
 <!-- home section starts  -->
 
 <section class="home">
