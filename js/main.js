@@ -24,6 +24,7 @@ var dataset={
     'shouldGo':79,
     'lon':77.33,
     'lat':28.58,
+    'loaction':'Use Google Maps',
    'date':'12 55 43',
    'iconcode':`http://openweathermap.org/img/w/50d.png`
     
@@ -92,7 +93,7 @@ const getAirQty=async (lat,lon) =>{
     return airqty; 
 }
 
-function uploaddata(name, aqiLevel, expenceValue, populationValue, wetherValue, goPercent,tempvalue,dateval,iconval,personval){
+function uploaddata(name, aqiLevel, expenceValue, populationValue, wetherValue, goPercent,tempvalue,dateval,iconval,personval,locationval){
     DataRef=firebase.database().ref('Places/'+dataset.place);
     DataRef.set({
       place: name,
@@ -104,7 +105,8 @@ function uploaddata(name, aqiLevel, expenceValue, populationValue, wetherValue, 
       shouldGo:goPercent,
       date:dateval,
       person:personval,
-      icon:iconval
+      icon:iconval,
+      placelocation:locationval
     });
     // alert('Saved');
 }
@@ -114,7 +116,7 @@ function removedata(placename){
 }
 
 // Upload Function whill be call Here!!!!
-function uploadManualData(cityname,crowd,person){
+function uploadManualData(cityname,crowd,person,locationval){
 
 const populationBar=crowd;
 var Wetherdataset= getWeather(cityname).then((value)=>
@@ -132,8 +134,9 @@ var Wetherdataset= getWeather(cityname).then((value)=>
         dataset.aqi=Airvalue;
         dataset.person=person;
         dataset.shouldGo=shouldgo(value);
+        dataset.loaction=locationval;
         
-        uploaddata(dataset.place,dataset.aqi,dataset.expence,dataset.population,dataset.wether,dataset.shouldGo,dataset.temp,dataset.date,dataset.iconcode,dataset.person);
+        uploaddata(dataset.place,dataset.aqi,dataset.expence,dataset.population,dataset.wether,dataset.shouldGo,dataset.temp,dataset.date,dataset.iconcode,dataset.person,dataset.loaction);
 
     })
     
@@ -146,13 +149,15 @@ const nameofplace = document.getElementById("placename").value;
    const nameofperson = document.getElementById("personname").value;
    const imgofperson = document.getElementById("myFile").value;
    const popdataa = document.getElementById("popselect").value;
+   const location = document.getElementById("placelocation").value;
 
    console.log(nameofplace);
    console.log(nameofperson);
    console.log(imgofperson);
    console.log(popdataa);
+   console.log(location);
 
-    uploadManualData(nameofplace,popdataa,nameofperson);
+    uploadManualData(nameofplace,popdataa,nameofperson,location);
 }) 
 
 
@@ -255,6 +260,7 @@ async function getAllData(place_){
                <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Crowd: ${AllData[j].population}</p></div>
                <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temprature: ${AllData[j].temp} C</p></div>
                <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
+               <div class="holder"><img class="small-icon" src="icons/loaction.png" alt=""><p id="aqi">location: ${AllData[j].placelocation}</p></div>
                <div class="holder"><p style="color:grey"><i>Updated by: ${AllData[j].person}</i></p></div>
            
             
