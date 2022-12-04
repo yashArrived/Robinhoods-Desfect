@@ -383,7 +383,7 @@ function loadData(){
                     <div class="holder"><img class="small-icon" src="icons/shouldgo.png" alt=""><p>ShoulGo: ${placesdata[t].shouldGo}</p></div>
                     <div class="holder"><img class="small-icon" src=${Airimage} alt=""><p id="aqi">Aqi: ${placesdata[t].aqi}</p></div>
                     <div class="holder"><img class="small-icon" src=${placesdata[t].icon} alt=""><p>Wether: ${placesdata[t].wether}</p></div>
-                    <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Population: ${placesdata[t].population}</p></div>
+                    <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Crowd: ${placesdata[t].population}</p></div>
                     <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temp: ${placesdata[t].temp}</p></div>
                     <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
                     </div>

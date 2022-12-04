@@ -84,22 +84,22 @@
 
 <!-- home section starts  -->
 
-<section id="home" class="home">
+<section id="home" class="home back-gra">
 
    <div class="swiper home-slider">
 
       <div class="swiper-wrapper">
 
-         <div class="swiper-slide slide" style="background:url(images/back1.jpg) no-repeat">
+         <div class="swiper-slide slide" >
             <div class="content">
-               <span>explore, discover, travel</span>
+               <span>Lorem, ipsum dolor.</span>
                <h3>What we do</h3>
-               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio fugit deserunt placeat, quo accusamus mollitia magnam amet praesentium sed cupiditate!</p>
-               <a href="#howtoguide" class="btn">How to guide</a>
+               <p id="wanna">Wanna hangout with friends or family nearby? Use our service and get to know how safe it is to visit the place!!
+                  You just need to enter the name of the place below :)
+               </p>
+               <a href="#knowaboutplace" class="btn">Search</a>
             </div>
          </div>
-
-     
 
          
          
@@ -175,15 +175,21 @@
 <!-- home offer section starts  -->
 
 <section class="home-offer">
-   <div class="content">
+   <div class="content" id="knowaboutplace">
       <h3> know about place of your choice</h3>
       <br>
       <br>
       <form >
-         <label for="fname" id="firstname" >Enter Name of the place</label>
+         <label class="increase-size" for="fname" id="firstname" >Enter Name of the place</label>
          <br>
-         <input type="text" id="fname"  placeholder="Name">
-
+         <div class="search-container">
+            <input type="text" id="fname" name="search" placeholder="Search..." class="search-input">
+            <a href="#" class="search-btn">
+                    <i class="fas fa-search"></i>      
+            </a>
+        </div>
+        <br>
+        <br>
 
          <button id="submission" type="button" >Submit</button>
   </form>
@@ -191,11 +197,21 @@
    <div class="searchResult"></div>
 </section>
 
+
 <div id="howtoguide">
-   <h1 class="heading-title">How to use our service</h1>
-   <div class="content contentcontainer">
-     <p id="howto"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vitae voluptatum eligendi et minima obcaecati qui quas cupiditate commodi iste reiciendis tempore exercitationem iusto corrupti, facilis quam. Quia porro, magnam harum excepturi praesentium incidunt pariatur non asperiores dolore, placeat ut commodi natus sequi quam quisquam. Libero expedita eius minus quod.</p>
-   
+   <div class="abouttext">
+   <header class="c-header">
+      <h1 class="heading-title">How to use</h1>
+      <p>
+         After knowing about the conditons there compare with different places and choose a right spot for hanging out with friends or family.
+         Your health , your ease is our priority.      
+         <br>
+         <br>
+         Just enter the name of the place you want to visit , you will get all the data regarding the local place like AQI , Weather , Population , Temperature etc.</p>
+    </header>
+   </div>
+   <div class="aboutimage">
+      <img class="aboutimagesize" src="icons/help.gif" alt="help-img">
    </div>
 </div>
 <!-- home about section starts  -->
@@ -214,11 +230,12 @@
        </div>
      </div>
      <div class="team-content">
-       <h2>Yash Tiwari</h2>
-       <h3>Boss</h3>
-       <p>Some text goes here that describes about team member</p>
-      
-     </div>
+      <h2>Yash Tiwari</h2>
+      <h3>@yashArrived</h3>
+      <h3>Developer @GDSC Jss Noida</h3>
+      <p>Developing faster than the speed of light. A tenacious sophomore</p>
+     
+    </div>
 
    </div>
      <div class="team team-2">
@@ -233,10 +250,11 @@
         </div>
       </div>
       <div class="team-content">
-        <h2>Yuvraj Yadav</h2>
-        <h3>CEO & Founder</h3>
-        <p>Some text goes here that describes about team member</p>
-        </div>
+         <h2>Yuvraj Yadav</h2>
+         <h3>@yyuvraj54</h3>
+         <h3>Jss Noida</h3>
+         <p>I am a Webdeveloper cureently in second year of my college.</p>
+         </div>
    </div>
    </div>
 
@@ -257,42 +275,23 @@
 
    <div class="box-container">
 
-      <div class="box">
-         <h3>quick links</h3>
-         <a href="home.php"> <i class="fas fa-angle-right"></i> home</a>
-         <a href="about.php"> <i class="fas fa-angle-right"></i> about</a>
-         <a href="package.php"> <i class="fas fa-angle-right"></i> package</a>
-         <a href="book.php"> <i class="fas fa-angle-right"></i> book</a>
-      </div>
+    
 
-      <div class="box">
-         <h3>extra links</h3>
-         <a href="#"> <i class="fas fa-angle-right"></i> ask questions</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> about us</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> terms of use</a>
-      </div>
-
+     
       <div class="box">
          <h3>contact info</h3>
          <a href="#"> <i class="fas fa-phone"></i> +91-9118850768 </a>
          <a href="#"> <i class="fas fa-phone"></i> +91-8368278705 </a>
          <a href="#"> <i class="fas fa-envelope"></i> yashutiwari22@gmail.com </a>
-         <a href="#"> <i class="fas fa-envelope"></i> yyuvraj545@gmail.com </a>
-         <a href="#"> <i class="fas fa-map"></i> mumbai, india - 400104 </a>
+         <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlDSqLTGRRzKfrBGwSdCFqlTsnSkspjpdZXqSNVjlXTpDzkGLWjWbCSKGDRCdVfZRgcnwg"> <i class="fas fa-envelope"></i> yyuvraj545@gmail.com </a>
+         
       </div>
 
-      <div class="box">
-         <h3>follow us</h3>
-         <!-- <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a> -->
-         <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-         <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-         <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-      </div>
+      
 
    </div>
 
-   <div class="credit"> Created WITH Pyaar (.)</div>
+   <div class="credit"> @ALL RIGHT RESERVED </div>
 
 </section>
 
