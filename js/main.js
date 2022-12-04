@@ -324,6 +324,7 @@ function loadData(){
         snapshot.forEach(function (childSnapshot){
             Dataload.push(childSnapshot.val());
         });
+        console.log(Dataload);
         for(var q=0; q<Dataload.length; q++){
             var element=Dataload[q].aqi;
             
@@ -345,11 +346,11 @@ function loadData(){
         for(var w=0; w<Dataload.length; w++){
             if(Datacount==0){break;}
             
-            if(Dataload[w].shouldGo=='Normal'){
+            if(Dataload[w].shouldGo=='Great Choice 👍🏼'){
                 placesdata.push(Dataload[w]);
                 Datacount--;
             }
-            else if(Dataload[w].shouldGo=='High'){
+            else if(Dataload[w].shouldGo=='Avoid 🫁(health issue)'){
                 placesdata.push(Dataload[w]);
                 Datacount--;
             }
