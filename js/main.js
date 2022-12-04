@@ -260,7 +260,7 @@ async function getAllData(place_){
                <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Crowd: ${AllData[j].population}</p></div>
                <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temprature: ${AllData[j].temp} C</p></div>
                <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
-               <div class="holder"><img class="small-icon" src="icons/loaction.png" alt=""><p id="aqi">location: ${AllData[j].placelocation}</p></div>
+               <div class="holder"><img class="small-icon" src="icons/location.png" alt=""><p id="aqi">location: ${AllData[j].placelocation}</p></div>
                <div class="holder"><p style="color:grey"><i>Updated by: ${AllData[j].person}</i></p></div>
            
             
@@ -393,7 +393,7 @@ function loadData(){
                     <div class="holder"><img class="small-icon" src="icons/croud.png" alt=""><p>Crowd: ${placesdata[t].population}</p></div>
                     <div class="holder"><img class="small-icon" src="icons/temp.png" alt=""><p>Temp: ${placesdata[t].temp}</p></div>
                     <div class="holder"><img class="small-icon" src="icons/update.png" alt=""><p>Updated: ${Datestring}</p></div>
-                    <div class="holder"><img class="small-icon" src="icons/loaction.png" alt=""><p id="aqi">location: ${placesdata[t].placelocation}</p></div>
+                    <div class="holder"><img class="small-icon" src="icons/location.png" alt=""><p id="aqi">location: ${placesdata[t].placelocation}</p></div>
                     <div class="holder"><p style="color:grey"><i>Updated by: ${placesdata[t].person}</i></p></div>
                     </div>
                     
